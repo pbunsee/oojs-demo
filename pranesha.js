@@ -20,14 +20,24 @@ ninja3.wearsBlack = true;
 
 // create an object for famous ninjas
 function famousNinja(firstName, lastName, clan){
+	console.log(this);
+	console.log(arguments);
+	//setup inheritance of Ninja for famousNinja
+	var famousNinjaBeingBuilt = this;
+	Ninja.apply(famousNinjaBeingBuilt, arguments);
+    // or you could simply do
+    //Ninja.apply(this, arguments);
+
 	this.firstName = firstName;
 	this.lastName = lastName;
 	this.clan = clan;
 }
 
 // Instantiate an instance of famousNinja object and inherit properties of Ninja object
-famousNinja.prototype = new Ninja(8);
-
+famousNinja.prototype = new Ninja();
+ var PraneshaNinja = new famousNinja(5);
+ PraneshaNinja.firstName = "Pranesha";
+ 
 
 // wikipedia says that ninjas have tools like ropes, grappling hooks, collapsible ladders, etc.
 // create properties on famousNinja to be able to have info about what tools each famous ninja specialized in.
