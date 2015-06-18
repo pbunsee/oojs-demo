@@ -31,6 +31,8 @@ function MountedNinja(){
   this.ridesHorse = true;
 }
 
+// Set MountedNinja to inherit properties of Ninja in the following way:
 MountedNinja.prototype = new Ninja(4);
 
 rider = new MountedNinja();
+
