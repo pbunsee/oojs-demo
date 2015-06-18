@@ -34,16 +34,31 @@ famousNinja.prototype = new Ninja(8);
 famousNinja.prototype.tool = function(){
 	if ( this.lastName == "Goemon" ) {
 		this.tool = "poison";
-	} elsif (this.lastName == "Kumawakamaru" ) {
+	} 
+	else if (this.lastName == "Kumawakamaru" ) 
+	{
 		this.tool = "sword";
-	} else {
+	} 
+	else if ( this.lastName = "Hattori" ) 
+	{
+		this.tool = "ropes";
+	}
+	else
+	{
 		this.tool = "none";
 	}
 }
 
 // create an instance of famousNinja
-var ninja4 = famousNinja("Ishikawa", "Goemon", "some clan name" );
+var ninja4 = famousNinja();
+ninja4.firstName = "Ishikawa";
+ninja4.lastName = "Goemon";
+ninja4.clan = "some clan name";
 
+// jquery stuff
+$(document).ready(function(){
+	console.log("ready!");
+});
 
 
 
