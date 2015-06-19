@@ -20,8 +20,11 @@ ninja3.wearsBlack = true;
 
 // create an object for famous ninjas
 function famousNinja(firstName, lastName, clan){
-	console.log(this);
-	console.log(arguments);
+	console.log("here is this: " + this);
+	console.log("the ninjas disguise is: " + this.disguise);
+	var newDisguise = this.disguise;
+	console.log("disguise value: " + newDisguise);
+	console.log("here are the arguments: " + arguments);
 	//setup inheritance of Ninja for famousNinja
 	var famousNinjaBeingBuilt = this;
 	Ninja.apply(famousNinjaBeingBuilt, arguments);
@@ -35,9 +38,12 @@ function famousNinja(firstName, lastName, clan){
 
 // Instantiate an instance of famousNinja object and inherit properties of Ninja object
 famousNinja.prototype = new Ninja();
- var PraneshaNinja = new famousNinja(5);
- PraneshaNinja.firstName = "Pranesha";
- 
+ var specialNinja = new famousNinja(5);
+ specialNinja.firstName = "Pranesha";
+ specialNinja.lastName = "Bunsee";
+ specialNinja.clan = "Hattori";
+ specialNinja.tool;
+
 
 // wikipedia says that ninjas have tools like ropes, grappling hooks, collapsible ladders, etc.
 // create properties on famousNinja to be able to have info about what tools each famous ninja specialized in.
@@ -60,10 +66,10 @@ famousNinja.prototype.tool = function(){
 }
 
 // create an instance of famousNinja
-var ninja4 = famousNinja();
-ninja4.firstName = "Ishikawa";
-ninja4.lastName = "Goemon";
-ninja4.clan = "some clan name";
+//var ninja4 = famousNinja(7);
+//ninja4.firstName = "Ishikawa";
+//ninja4.lastName = "Goemon";
+//ninja4.clan = "some clan name";
 
 // jquery stuff
 $(document).ready(function(){
